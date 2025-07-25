@@ -1,0 +1,70 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build GTK App",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "${file}",  // Uses currently active file
+        "-o", "${fileDirname}/${fileBasenameNoExtension}",
+        "$(pkg-config --cflags --libs gtk+-3.0)"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false  // Not default to avoid conflicts
+      },
+      "problemMatcher": [],
+      "options": {
+        "shell": {
+          "executable": "C:\\msys64\\usr\\bin\\bash.exe",
+          "args": ["-l", "-c"]
+        }
+      },
+      "detail": "For GTK3 projects (requires pkg-config)"
+    },
+    {
+      "label": "Build SDL2 App",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "${file}",
+        "-I${workspaceFolder}/include",  // Custom include path
+        "-L${workspaceFolder}/lib",      // Custom library path
+        "-mconsole",
+        "-lSDL2",
+        "-lSDL2_ttf",
+        "-lSDL2_image",  // Optional: add other SDL2 libraries
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [],
+      "detail": "For SDL2/SDL_ttf projects"
+    },
+    {
+      "label": "Build SDL2 (pkg-config)",
+      "type": "shell",
+      "command": "gcc",
+      "args": [
+        "${file}",
+        "-o", "${fileDirname}/${fileBasenameNoExtension}",
+        "$(pkg-config --cflags --libs sdl2 SDL2_ttf)"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true  // Set as default if using pkg-config
+      },
+      "options": {
+        "shell": {
+          "executable": "C:\\msys64\\usr\\bin\\bash.exe",
+          "args": ["-l", "-c"]
+        }
+      },
+      "detail": "Preferred method for SDL2 (requires pkg-config)"
+    }
+  ]
+}
