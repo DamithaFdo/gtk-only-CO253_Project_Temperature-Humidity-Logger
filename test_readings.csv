@@ -1,0 +1,6 @@
+seq_no,timestamp,temperature,humidity,temp_status,humid_status
+1,2025-07-25 18:44:42,255.00,255.00,Alert! Safe Temperature exceeded.,Alert! Safe Humidity exceeded.
+2,2025-07-25 18:45:44,255.00,255.00,Alert! Safe Temperature exceeded.,Alert! Safe Humidity exceeded.
+3,2025-07-25 18:46:46,255.00,255.00,Alert! Safe Temperature exceeded.,Alert! Safe Humidity exceeded.
+4,2025-07-25 18:47:47,255.00,255.00,Alert! Safe Temperature exceeded.,Alert! Safe Humidity exceeded.
+5,2025-07-25 18:48:49,255.00,255.00,Alert! Safe Temperature exceeded.,Alert! Safe Humidity exceeded.
