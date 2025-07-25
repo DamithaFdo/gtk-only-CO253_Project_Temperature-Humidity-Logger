@@ -62,7 +62,7 @@ void get_user_readings(Reading readings[TEST_READINGS_COUNT]) {
         // Generate timestamp
         generate_timestamp(readings[i].timestamp, i);
         
-        printf("✓ Reading %d recorded: %.2f deg C, %.2f%%\n\n", i + 1, 
+        printf("Reading %d recorded: %.2f deg C, %.2f%%\n\n", i + 1, 
                readings[i].temperature, readings[i].humidity);
     }
 }
@@ -75,26 +75,17 @@ int create_test_csv(Reading readings[TEST_READINGS_COUNT], const char* filename)
         return 0;
     }
     
-    // Write header
-    fprintf(file, "seq_no,timestamp,temperature,humidity,temp_status,humid_status\n");
-    
-    // Write data rows
+    // Write data rows (no header needed)
     for (int i = 0; i < TEST_READINGS_COUNT; i++) {
-        char temp_status[50], humid_status[50];
-        get_status(readings[i].temperature, temp_status, "Temperature");
-        get_status(readings[i].humidity, humid_status, "Humidity");
-        
-        fprintf(file, "%d,%s,%.2f,%.2f,%s,%s\n",
+        fprintf(file, "%d,%s,%.2f,%.2f\n",
                 readings[i].seq_no,
                 readings[i].timestamp,
                 readings[i].temperature,
-                readings[i].humidity,
-                temp_status,
-                humid_status);
+                readings[i].humidity);
     }
     
     fclose(file);
-    printf("✓ CSV file '%s' created successfully!\n\n", filename);
+    printf("CSV file '%s' created successfully!\n\n", filename);
     return 1;
 }
 
@@ -125,11 +116,7 @@ void display_readings_table(Reading readings[TEST_READINGS_COUNT]) {
 
 int main() {
     printf("========================================\n");
-    printf("  TEMPERATURE & HUMIDITY TEST PROGRAM\n");
-    printf("========================================\n");
-    printf("Purpose: Create test data and statistics\n");
-    printf("Date: 2025-07-25\n");
-    printf("User: DamithaFdo\n");
+    printf("  MANUAL TEMPERATURE & HUMIDITY TEST\n");
     printf("========================================\n\n");
     
     Reading readings[TEST_READINGS_COUNT];
@@ -155,19 +142,26 @@ int main() {
     printf("Max Humid: %.2f %% at %s\n", stats.max_humid, stats.max_humid_ts);
     printf("\n");
     
-    // Create CSV file
+    // Creates test_readings.csv file
     if (create_test_csv(readings, "test_readings.csv")) {
         printf("========================================\n");
         printf("  SUCCESS!\n");
         printf("========================================\n");
         printf("Test data saved to 'test_readings.csv'\n");
-        printf("You can now use this file in the main GUI application.\n");
-        printf("Select 'CSV File Input' mode and it will use your test data.\n");
+        printf("Select 'CSV File Input' mode in GUI to verify Operation.\n");
         printf("========================================\n");
     } else {
         printf("Error creating CSV file!\n");
+        
+        printf("\nPress any key to continue...");
+        getchar(); // Clear any remaining input
+        getchar(); // Wait for user input
         return 1;
     }
+    
+    printf("\nPress any key to continue...");
+    getchar(); // Clear any remaining input  
+    getchar(); // Wait for user input
     
     return 0;
 }
