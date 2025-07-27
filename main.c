@@ -126,7 +126,7 @@ void update_gui(int idx) {
     sprintf(temp_str, "%.2f °C", readings[idx].temperature);
     sprintf(humid_str, "%.2f %%", readings[idx].humidity);
 
-    /// This is the Main loop determines temperature status///
+    /// This is the Main loop that determines temperature status///
     if (readings[idx].temperature > ALERT_THRESHOLD)
         strcpy(safe_temp, "Alert! Safe Temperature exceeded.");
     else if (readings[idx].temperature >= WARNING_THRESHOLD)
@@ -134,7 +134,7 @@ void update_gui(int idx) {
     else
         strcpy(safe_temp, "Safe Temperature levels.");
 
-    /// This is the Main loop determines humidity status///
+    /// This is the Main loop that determines humidity status///
     if (readings[idx].humidity > ALERT_THRESHOLD)
         strcpy(safe_humid, "Alert! Safe Humidity exceeded.");
     else if (readings[idx].humidity >= WARNING_THRESHOLD)
@@ -235,7 +235,7 @@ void start_simulation(GtkWidget *widget, gpointer data) {
     g_timeout_add(500, simulate_reading, widget);
 }
 
-//From here code mainly focused on GUI styling and layout (our coding ends for main.c)
+//From here on downwards the code mainly focused on GUI styling and layout
 
 static void on_readings_count_changed(GtkSpinButton *spin_button, gpointer user_data) {
     selected_log_size = (int)gtk_spin_button_get_value(spin_button);
