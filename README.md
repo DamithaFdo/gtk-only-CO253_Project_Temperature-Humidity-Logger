@@ -24,8 +24,8 @@ This project implements a comprehensive temperature and humidity monitoring syst
 - `Reading`: Core data structure for temperature/humidity readings
   - `seq_no`: Sequence number of reading
   - `timestamp[32]`: Date and time string
-  - `temperature`: Temperature value in Celsius
-  - `humidity`: Humidity percentage
+  - `temperature`: Temperature value in Celcius 
+  - `humidity`: Relative Humidity (as a percentage)
 
 **Function Declarations**:
 - `void generate_random_readings(Reading *readings, int n)`: Generates simulated sensor data
@@ -60,6 +60,9 @@ This project implements a comprehensive temperature and humidity monitoring syst
 ### `simulator.c`
 **Purpose**: Data simulation and CSV file handling module
 
+**Internal Functions**:
+- `get_today_midnight()`: Cross-platform function for timestamp generation starting at 00:00
+
 **Implemented Functions**:
 - `generate_random_readings()`: 
   - Creates temperature in ranges (50-79°C) and humidity (50-79%)
@@ -69,9 +72,6 @@ This project implements a comprehensive temperature and humidity monitoring syst
   - Parses CSV files with format: `seq_no,timestamp,temperature,humidity`
   - Returns success/failure status
   - Verifies expected number of readings
-
-**Internal Functions**:
-- `get_today_midnight()`: Cross-platform function for timestamp generation starting at 00:00
 
 ### `main.c`
 **Purpose**: Main application with GUI (using GTK3 library)
@@ -218,4 +218,4 @@ gtk-only-CO253_Project_Temperature-Humidity-Logger/
 
 ## License
 
-Educational project - Group 08, by E/21/132
+Educational project - Group 08, by E/21/132 , E/21/139
