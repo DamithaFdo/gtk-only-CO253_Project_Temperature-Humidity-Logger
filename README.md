@@ -198,7 +198,7 @@ CSV files should follow this format if manually created:
 - **Safe Range**: Below 60.0
 
 
-## Project Structure
+## Project files
 ```
 gtk-only-CO253_Project_Temperature-Humidity-Logger/
 ├── main.c                    # Main GTK3 application with GUI

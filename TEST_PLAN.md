@@ -102,7 +102,7 @@ int main() {
 ### `create_test_csv()` Function  
 Writes readings data to CSV file
 
-**Expected CSV Output** (`test_readings.csv`):
+**Expected CSV Output** (`test_readings.csv`)
 ```
 1,2025-07-27 HH:MM:SS,25.50,55.00
 2,2025-07-27 HH:MM:SS,67.00,62.00
@@ -155,7 +155,7 @@ Max Temp: 67.00 deg C at [timestamp of reading 2]
 Max Humid: 70.00 % at [timestamp of reading 4]
 ```
 
-**Expected Table Format**
+**Expected Tabular output**
 ```
 ****************************************
   READINGS TABLE
