@@ -216,9 +216,9 @@ gtk-only-CO253_Project_Temperature-Humidity-Logger/
 ├── libcairo-2.dll           
 ├── libglib-2.0-0.dll        
 └── .vscode/                  # VS Code configuration folder
-    ├── c_cpp_properties.json # C/C++ IntelliSense configuration
-    ├── tasks.json            # Build tasks configuration
-    └── settings.json         # Workspace settings
+    ├── c_cpp_properties.json 
+    ├── tasks.json            
+    └── settings.json         
 ```
 
 ## License
