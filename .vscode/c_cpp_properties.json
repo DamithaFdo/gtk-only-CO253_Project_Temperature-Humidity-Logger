@@ -3,8 +3,7 @@
     {
       "name": "Win32",
       "includePath": [
-        "${workspaceFolder}/include",
-        "${workspaceFolder}/**",  // Added this line for better IntelliSense
+        "${workspaceFolder}/**",
         "C:/msys64/mingw64/include/gtk-3.0",
         "C:/msys64/mingw64/include/glib-2.0",
         "C:/msys64/mingw64/lib/glib-2.0/include",
