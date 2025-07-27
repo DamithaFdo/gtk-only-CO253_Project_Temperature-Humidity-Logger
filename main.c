@@ -5,7 +5,7 @@
 #include "simulator.h"
 #include "stats.h"
 
-//x86_64-w64-mingw32-gcc main.c simulator.c stats.c test.c -o app $(pkg-config --cflags --libs gtk+-3.0)
+//x86_64-w64-mingw32-gcc main.c simulator.c stats.c -o app $(pkg-config --cflags --libs gtk+-3.0)
 
 // Constants
 #define MAX_LOG_SIZE 50        // Maximum # readings

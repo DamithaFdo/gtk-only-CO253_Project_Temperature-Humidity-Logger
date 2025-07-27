@@ -1,6 +1,11 @@
 # Temperature & Humidity Logger BY Group 08
 ## Designed by E/21/132 E/21/139
 
+**My Repository**: 
+```bash
+https://github.com/DamithaFdo/gtk-only-CO253_Project_Temperature-Humidity-Logger.git
+```
+
 This application focuses on creating a software-only simulated application for processing temperature and humidity data received from sensor platforms. This development was done for focusing on greenhouse condition monitoring.
 We used the GTK library for creating the GUI.
 
