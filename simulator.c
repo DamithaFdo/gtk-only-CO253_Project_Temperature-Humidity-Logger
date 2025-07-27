@@ -61,7 +61,7 @@ bool read_csv_readings(const char *filename, Reading *readings, int n) {
             readings[i].humidity = humid;
             i++;
         }
-        // Skip lines that incomplete
+        // Skip lines that are incomplete
     }
     
     fclose(f);
